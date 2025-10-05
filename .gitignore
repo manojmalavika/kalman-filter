@@ -1,7 +1,8 @@
 # Ignore build and development artifacts
 build/
 devel/
-logs/
+log/
+install/
 
 # CMake build files
 CMakeFiles/
