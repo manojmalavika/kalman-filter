@@ -1,0 +1,25 @@
+# Ignore build and development artifacts
+build/
+devel/
+logs/
+
+# CMake build files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.cmake
+
+# Catkin generated files
+catkin_generated/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
