@@ -137,6 +137,7 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/kf_tracker_node.cpp)
 add_executable(tracker_node src/tracker_node.cpp)
 add_executable(measurement_pub_node src/measurement_pub_node.cpp)
+add_executable(eigen_playground src/eigen_playground.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -162,6 +163,7 @@ target_link_libraries(csv_logger_node ${catkin_LIBRARIES})
 
 target_link_libraries(kf_core Eigen3::Eigen)
 target_link_libraries(tracker_node kf_core ${catkin_LIBRARIES})
+target_link_libraries(eigen_playground Eigen3::Eigen)
 #############
 ## Install ##
 #############

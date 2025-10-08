@@ -8,16 +8,9 @@ class KalmanCV2D {
 public:
   KalmanCV2D();
 
-  // initialize from first measurement (x,y)
   void initFromMeasurement(const Eigen::Vector2d& z);
-
-  // time update with timestep dt (seconds)
   void predict(double dt);
-
-  // measurement update with (x,y)
   void update(const Eigen::Vector2d& z);
-
-  // current position estimate (x,y)
   Eigen::Vector2d position() const;
 
 private:
@@ -25,6 +18,16 @@ private:
   Eigen::Vector4d x_;
   // covariance
   Eigen::Matrix4d P_;
+
+  // measurement model (2x4)
+  Eigen::Matrix<double, 2, 4> H_;
+  // process covariance
+  Eigen::Matrix4d Q_;
+  // measurement covariance
+  Eigen::Matrix2d R_;
+  // state transition
+  Eigen::Matrix4d F_;
+
 };
 
 } // namespace kf_core
